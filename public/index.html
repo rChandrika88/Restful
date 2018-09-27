@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninjago</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />﻿
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+
+</head>
+<body>
+    <h1 class="title">Ninjago - a Ninja REST API</h1>
+    <div id="homepage">
+        <h1>Hire a ninja in your area!</h1>
+        <div id="ninjas"></div>
+    </div>
+
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>﻿
+
+    <!------Create React Component------------->
+    <script type = "text/babel">
+    
+    var Ninjas = React.createClass({
+        render:function(){
+            return(
+                <div id="ninj-container">
+                    <form id="search" onSubmit={this.handleSubmit}>
+                        <label>Enter your latitude:</label>
+                        <input type="text" ref="lat" placeholder="latitude" required/>
+                        <label>Enter your longiitude:</label>
+                        <input type="text" ref="lng" placeholder="longitude" required/>
+                        <input type="submit" value="Find Ninjas"/>
+                    </form>
+                    <ul></ul>
+                </div>    
+            );
+        },
+        handleSubmit:function(e){
+            e.preventDefault();
+            var lng= this.refs.lng.value;
+            var lat = this.refs.lat.value;
+        }
+    })
+    
+    </script>
+
+</body>
+</html>
